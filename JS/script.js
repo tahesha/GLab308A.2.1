@@ -284,3 +284,38 @@ class Character {
     }
   }
   
+
+  //Part 7: Adventure Forth
+  // Create instances of adventurers and companions
+const adventurerFactory = new AdventurerFactory();
+
+// Generate adventurers
+const fighters = new AdventurerFactory("Fighter");
+fighters.generate("Arion");
+fighters.generate("Logan");
+fighters.generate("Gimbyl");
+
+// Generate healers
+const healers = new AdventurerFactory("Healer");
+healers.generate("Graysine");
+healers.generate("Eiliomdyn");
+
+// Generate wizards
+const wizards = new AdventurerFactory("Wizard");
+wizards.generate("Graysine");
+wizards.generate("Seroulean");
+
+// Generate companions for adventurers
+adventurerFactory.findByIndex(0).companion = new Companion("Arwin", "Elf");
+adventurerFactory.findByIndex(1).companion = new Companion("Galeam", "Hobbit");
+
+// Interact with adventurers
+const arion = adventurerFactory.findByName("Arion");
+const logan = adventurerFactory.findByName("Logan");
+const graysine = adventurerFactory.findByName("Graysine");
+const galeam = adventurerFactory.findByName("Galeam");
+
+arion.scout();
+logan.duel(galeam);
+graysean.heal(arion);
+galeam.steal(arion);
