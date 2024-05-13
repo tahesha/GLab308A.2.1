@@ -89,3 +89,8 @@ robin.companion.type = "Cat";
 robin.companion.companion = new Character("Frank");
 robin.companion.companion.type = "Flea";
 robin.companion.companion.inventory = ["small hat", "sunglasses"];
+
+//Test the roll method
+robin.roll(); // Example output: Robin rolled a 14.
+robin.companion.roll(); // Example output: Leo rolled a 12.
+robin.companion.companion.roll(); // Example output: Frank rolled a 17.
