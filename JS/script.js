@@ -170,3 +170,7 @@ robin.companion.type = "Cat";
 robin.companion.companion = new Companion("Frank");
 robin.companion.companion.type = "Flea";
 robin.companion.companion.inventory = ["small hat", "sunglasses"];
+
+//Test new methods
+robin.scout(); // Example output: Robin is scouting ahead...
+robin.companion.roll(); // Example output: Leo rolled a 12.
