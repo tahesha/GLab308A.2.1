@@ -94,3 +94,21 @@ robin.companion.companion.inventory = ["small hat", "sunglasses"];
 robin.roll(); // Example output: Robin rolled a 14.
 robin.companion.roll(); // Example output: Leo rolled a 12.
 robin.companion.companion.roll(); // Example output: Frank rolled a 17.
+
+
+//Part 3 
+//Create the Adventurer Class
+class Adventurer extends Character {
+    constructor(name, role) {
+        super(name);
+        this.role = role;
+        this.inventory.push("bedroll", "50 gold coins");
+    }
+
+    scout() {
+        console.log(`${this.name} is scouting ahead...`);
+        super.roll();
+    }
+
+    // Add more methods and properties specific to adventurers
+}
