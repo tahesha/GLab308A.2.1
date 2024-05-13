@@ -63,3 +63,19 @@ const adventurer = {
 
 //Test the roll method.
 adventurer.roll(); //Example output: Robin rolled a 14.
+
+
+//Part 2
+//Create the character class
+class Character {
+    constructor(name) {
+        this.name = name;
+        this.health = 100;
+        this.inventory = [];
+    }
+
+    roll(mod = 0) {
+        const result = Math.floor(Math.random() * 20) + 1 + mod;
+        console.log(`${this.name} rolled a ${result}.`);
+    }
+}
