@@ -4,3 +4,12 @@ const adventurer = {
     health: 10,
     inventory: ["sword", "potion", "artifact"]
 };
+
+//Access Inventory Items
+console.log(adventurer.inventory[0]);
+
+
+//Loop Through Inventory
+adventurer.inventory.forEach(item => {
+    console.log(item);
+});
