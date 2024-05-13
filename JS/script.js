@@ -214,3 +214,14 @@ class Character {
     }
   }
   
+  //Part 5: Gather your party
+  class Healer extends Adventurer {
+    constructor(name) {
+      super(name, "Healer");
+      // Additional properties or methods specific to healers can be added here
+    }
+  }
+  
+  // Now, you can create instances of the Healer class directly
+  const robin = new Healer("Robin");
+  
