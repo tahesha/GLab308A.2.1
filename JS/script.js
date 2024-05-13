@@ -112,3 +112,35 @@ class Adventurer extends Character {
 
     // Add more methods and properties specific to adventurers
 }
+
+//Define Additional Attributes for the 'Adventurer' class
+class Adventurer extends Character {
+    constructor(name, role) {
+        super(name);
+        this.role = role;
+        this.inventory.push("bedroll", "50 gold coins");
+    }
+
+    scout() {
+        console.log(`${this.name} is scouting ahead...`);
+        super.roll();
+    }
+
+    // Additional attributes and methods specific to adventurers
+    setWeapon(weapon) {
+        this.weapon = weapon;
+        console.log(`${this.name} equips ${weapon}.`);
+    }
+
+    usePotion() {
+        if (this.inventory.includes("potion")) {
+            console.log(`${this.name} uses a potion.`);
+            this.health += 10; // Example: Potion restores 10 health
+            this.inventory.splice(this.inventory.indexOf("potion"), 1); // Remove potion from inventory
+        } else {
+            console.log(`${this.name} doesn't have any potions.`);
+        }
+    }
+
+    // Add more methods and properties specific to adventurers
+}
