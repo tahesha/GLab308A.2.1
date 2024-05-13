@@ -13,3 +13,14 @@ console.log(adventurer.inventory[0]);
 adventurer.inventory.forEach(item => {
     console.log(item);
 });
+
+//Add Companion
+const adventurer = {
+    name: "Robin",
+    health: 10,
+    inventory: ["sword", "potion", "artifact"],
+    companion: {
+        name: "Leo",
+        type: "Cat"
+    }
+};
