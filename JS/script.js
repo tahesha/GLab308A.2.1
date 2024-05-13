@@ -144,3 +144,19 @@ class Adventurer extends Character {
 
     // Add more methods and properties specific to adventurers
 }
+
+
+//Create the 'companion' class
+class Companion extends Character {
+    constructor(name, type) {
+        super(name);
+        this.type = type;
+        this.inventory.push("collar"); // All companions start with a collar
+    }
+
+    play() {
+        console.log(`${this.name} is playing.`);
+    }
+
+    // Additional methods and properties specific to companions
+}
