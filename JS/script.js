@@ -225,3 +225,62 @@ class Character {
   // Now, you can create instances of the Healer class directly
   const robin = new Healer("Robin");
   
+
+  //Part 6: Developing Skills
+  class Adventurer extends Character {
+    constructor(name, role) {
+      super(name);
+      this.role = role;
+      this.inventory.push("bedroll", "50 gold coins");
+    }
+  
+    scout() {
+      console.log(`${this.name} is scouting ahead...`);
+      super.roll();
+    }
+  
+    duel(opponent) {
+      console.log(`${this.name} is dueling ${opponent.name}...`);
+      while (this.health > 50 && opponent.health > 50) {
+        const roll1 = this.roll();
+        const roll2 = opponent.roll();
+        if (roll1 > roll2) {
+          opponent.health -= 1;
+          console.log(`${opponent.name} loses 1 health.`);
+        } else if (roll2 > roll1) {
+          this.health -= 1;
+          console.log(`${this.name} loses 1 health.`);
+        } else {
+          console.log("It's a tie!");
+        }
+        console.log(`${this.name}: ${this.health} health, ${opponent.name}: ${opponent.health} health`);
+      }
+      const winner = this.health > 50 ? this : opponent;
+      console.log(`${winner.name} wins the duel!`);
+    }
+  }
+  
+  class Healer extends Adventurer {
+    constructor(name) {
+      super(name, "Healer");
+    }
+  
+    heal(target) {
+      console.log(`${this.name} is healing ${target.name}...`);
+      target.health += 10;
+      console.log(`${target.name} gains 10 health.`);
+    }
+  }
+  
+  class Wizard extends Adventurer {
+    constructor(name) {
+      super(name, "Wizard");
+    }
+  
+    castSpell(target) {
+      console.log(`${this.name} is casting a spell on ${target.name}...`);
+      target.health -= 15;
+      console.log(`${target.name} loses 15 health.`);
+    }
+  }
+  
