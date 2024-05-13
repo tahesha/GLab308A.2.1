@@ -174,3 +174,43 @@ robin.companion.companion.inventory = ["small hat", "sunglasses"];
 //Test new methods
 robin.scout(); // Example output: Robin is scouting ahead...
 robin.companion.roll(); // Example output: Leo rolled a 12.
+
+
+//Part 4: Class Uniforms
+class Character {
+    static MAX_HEALTH = 100;
+  
+    constructor(name) {
+      this.name = name;
+      this.health = Character.MAX_HEALTH;
+      this.inventory = [];
+    }
+  
+    static printMaxHealth() {
+      console.log(`Maximum health for all characters: ${Character.MAX_HEALTH}`);
+    }
+  
+    roll() {
+      const result = Math.floor(Math.random() * 20) + 1;
+      console.log(`${this.name} rolled a ${result}.`);
+    }
+  }
+  
+  class Adventurer extends Character {
+    static ROLES = ["Fighter", "Healer", "Wizard"];
+  
+    constructor(name, role) {
+      super(name);
+      if (!Adventurer.ROLES.includes(role)) {
+        throw new Error(`Invalid role: ${role}.`);
+      }
+      this.role = role;
+      this.inventory.push("bedroll", "50 gold coins");
+    }
+  
+    scout() {
+      console.log(`${this.name} is scouting ahead...`);
+      super.roll();
+    }
+  }
+  
