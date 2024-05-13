@@ -1,3 +1,4 @@
+//Part 1: Set up the adventurer object with properties, companions, and a dice roll method.
 //Create the Adventurer Object. I started by defining the aventurer object with basic properties such as name, health, and inventory.
 const adventurer = {
     name: "Robin",
@@ -59,3 +60,6 @@ const adventurer = {
         console.log('${this.name} rolled a ${result}.');
     }
 };
+
+//Test the roll method.
+adventurer.roll(); //Example output: Robin rolled a 14.
